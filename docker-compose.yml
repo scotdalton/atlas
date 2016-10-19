@@ -1,4 +1,13 @@
-nginx:
-  build: .
-  ports:
-    - 80:80
+version: '2'
+services:
+
+  scot:
+    image: scotdalton/reactor:latest
+
+  ingress:
+    build:
+      context: ./ingress
+    ports:
+      - 80:80
+    depends_on:
+      - scot
