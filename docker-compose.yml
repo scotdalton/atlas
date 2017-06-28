@@ -5,8 +5,7 @@ services:
     image: scotdalton/reactor:latest
 
   ingress:
-    build:
-      context: ./ingress
+    image: scotdalton/atlas:latest
     ports:
       - 80:80
     depends_on:
